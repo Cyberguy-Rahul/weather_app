@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <h1 class="text-center text-[30px] font-bold uppercase p-[40px] ">Weather App</h1>
+
+        <div class="flex justify-between max-w-[600px] items-center mx-auto mt-[50px]" >
+            <p data-userweather class="tab cursor-pointer tracking-wide text-[20px] px-[10px] py-[5px] rounded-md" >your weather</p>
+            <p data-searchweather class="tab cursor-pointer  tracking-wide text-[20px] px-[10px] py-[5px] rounded-md"  >search weather </p>
+        </div>
+
+        <!--weather details container-->
+
+        <div class="weather-container flex flex-col justify-center items-center my-[4rem]">
+            <!-- grant location container  -->
+
+            <div  class="grant-location-container hidden   flex-col items-center" >
+                <img class="mx-auto mb-[20px]" src="assets/location.png" width="100" height="100" alt="">
+                <p class="text-[25px] mb-[10px] font-bold text-center ">Grant Location Access</p>
+                <p class="m-[5px]" >Allow access to get weatherf information</p>
+                <button data-grant-btn class="text-[20px]   uppercase cursor-pointer rounded-md bg-cyan-800 py-[10px] w-[200px]  text-white "
+                >Grant Access</button>
+
+            </div>
+
+            <!-- search  form conaainer  -->
+
+            <form class="search-form-container hidden  justify-center my-[20px] space-x-4 w-[90%] m-w[550px]" >
+                <input class="border p-[10px] w-[calc(100%-130px)]" type="text" placeholder="search for city ...." data-search-input>
+                <button type="submit" >
+                    <img class="bg-black p-[10px] rounded-full " src="assets/search.png"  width="45" height="25" alt="">
+                </button>
+            </form>
+
+            <!-- loading screen container  -->
+
+            <div class="loading-container hidden " >
+                <img src="assets/loading.gif" width="100" height="100" alt="">
+                <p>loading</p>
+            </div>
+
+            <!-- show weather info  -->
+
+            <div class="user-info-container hidden flex-col  items-center space-y-4">
+                <!-- city name and flag  -->
+                <div class="flex space-x-4 my-[20px]">
+                    <p data-city-name class="text-[30px]"></p>
+                    <img  data-countryIcon width="50">
+
+                </div>
+
+                <!-- weather description  -->
+                <p class="text-[20px]" data-description></p>
+
+                <!-- weather icon  -->
+                <img class="" data-weather-icon src="" alt="" width="80">
+
+                <!-- temperature  -->
+                <p data-temp class="text-[30px]" ></p>
+
+                <!-- 3 cards parameter  -->
+                <div class="flex space-x-8 justify-center ">
+                    <!-- card1  -->
+                    <div class="parameter">
+                        <img src="assets/wind.png" alt="" >
+                    <p  >windspeed</p>
+                    <p data-windspeed class="wind-data lowercase" ></p>
+                    </div>
+
+                    <!-- card-2  -->
+                    <div class="parameter">
+                        <img src="assets/humidity.png" alt="">
+                        <p>humidity</p>
+                        <p class="humidity-data"></p>
+                    </div>
+
+                    <!-- card-3  -->
+                    <div class="parameter">
+                        <img src="assets/cloud.png" alt="">
+                        <p>clouds</p>
+                        <p class="cloud-data" ></p>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="script.js"></script> 
+</body>
+</html>
